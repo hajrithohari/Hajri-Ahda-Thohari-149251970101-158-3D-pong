@@ -6,8 +6,8 @@ public class BallController : MonoBehaviour
 {
     private Rigidbody rb;
     private BallSpawner ballSpawner;
+    private bool isMoved;
 
-    public Transform ballDestination;
     public float speed;
 
     private void Start()
@@ -16,7 +16,7 @@ public class BallController : MonoBehaviour
         ballSpawner = FindObjectOfType<BallSpawner>();
     }
 
-    private void Update()
+    private void FixedUpdate()
     {
         MoveBall();
     }
@@ -28,21 +28,29 @@ public class BallController : MonoBehaviour
 
     public void MoveBall()
     {
-        if (transform.position.x == 5 && transform.position.z == 5)
+        if (isMoved)
         {
-            rb.AddForce(new Vector3(Random.Range(-4f, 1f), -0.25f, Random.Range(-4f, -1f)) * speed);
+            return;
         }
-        if (transform.position.x == -5 && transform.position.z == 5)
+        else
         {
-            rb.AddForce(new Vector3(Random.Range(1f, 4f), -0.25f, Random.Range(-4f, -1f)) * speed);
+            if (transform.position.x == 5 && transform.position.z == 5)
+            {
+                rb.AddForce(new Vector3(Random.Range(-4f, -2f), -0.25f, Random.Range(-4f, -2f)) * speed);
+            }
+            if (transform.position.x == -5 && transform.position.z == 5)
+            {
+                rb.AddForce(new Vector3(Random.Range(2f, 4f), -0.25f, Random.Range(-4f, -2f)) * speed);
+            }
+            if (transform.position.x == 5 && transform.position.z == -5)
+            {
+                rb.AddForce(new Vector3(Random.Range(-4f, -2f), -0.25f, Random.Range(2f, 4f)) * speed);
+            }
+            if (transform.position.x == -5 && transform.position.z == -5)
+            {
+                rb.AddForce(new Vector3(Random.Range(2f, 4f), -0.25f, Random.Range(2f, 4f)) * speed);
+            }
         }
-        if (transform.position.x == 5 && transform.position.z == -5)
-        {
-            rb.AddForce(new Vector3(Random.Range(-4f, 1f), -0.25f, Random.Range(1f, 4f)) * speed);
-        }
-        if (transform.position.x == -5 && transform.position.z == -5)
-        {
-            rb.AddForce(new Vector3(Random.Range(1f, 4f), -0.25f, Random.Range(1f, 4f)) * speed);
-        }
+        isMoved = true;
     }
 }

@@ -31,7 +31,6 @@ public class BallSpawner : MonoBehaviour
   
     public void GenerateBall()
     {
-        //fungsi remove balllist belum dibikin
         if (ballList.Count >= 5)
         {
             return; 

@@ -29,19 +29,19 @@ public class GameOver : MonoBehaviour
 
     private void Winner()
     {
-        if (manager.player[0].GetComponent<PaddleControllerVertical>().playerHP != 0)
+        if (manager.player[0].GetComponent<PaddleController>().playerHP != 0)
         {
             PlayerPrefs.SetString("winner", "Player 4");
         }
-        if (manager.player[1].GetComponent<PaddleControllerVertical>().playerHP != 0)
+        if (manager.player[1].GetComponent<PaddleController>().playerHP != 0)
         {
             PlayerPrefs.SetString("winner", "Player 3");
         }
-        if (manager.player[2].GetComponent<PaddleControllerHorizontal>().playerHP != 0)
+        if (manager.player[2].GetComponent<PaddleController>().playerHP != 0)
         {
             PlayerPrefs.SetString("winner", "Player 2");
         }
-        if (manager.player[3].GetComponent<PaddleControllerHorizontal>().playerHP != 0)
+        if (manager.player[3].GetComponent<PaddleController>().playerHP != 0)
         {
             PlayerPrefs.SetString("winner", "Player 1");
         }

@@ -4,8 +4,10 @@ using UnityEngine;
 
 public class ScoreManager : MonoBehaviour
 {
-    public bool isVertical;
-    public bool isRight;
+    [SerializeField]
+    private bool isVertical;
+    [SerializeField]
+    private bool isRight;
 
     public GoalManager manager;
 
@@ -18,9 +20,9 @@ public class ScoreManager : MonoBehaviour
     {
         if (isVertical && isRight)
         {
-            if (manager.player[0].GetComponent<PaddleControllerVertical>().playerHP > 0)
+            if (manager.player[0].GetComponent<PaddleController>().playerHP > 0)
             {
-                manager.player[0].GetComponent<PaddleControllerVertical>().playerHP--;
+                manager.player[0].GetComponent<PaddleController>().playerHP--;
             }
             else
             {
@@ -29,9 +31,9 @@ public class ScoreManager : MonoBehaviour
         }
         if (isVertical && !isRight)
         {
-            if (manager.player[1].GetComponent<PaddleControllerVertical>().playerHP > 0)
+            if (manager.player[1].GetComponent<PaddleController>().playerHP > 0)
             {
-                manager.player[1].GetComponent<PaddleControllerVertical>().playerHP--;
+                manager.player[1].GetComponent<PaddleController>().playerHP--;
             }
             else
             {
@@ -40,9 +42,9 @@ public class ScoreManager : MonoBehaviour
         }
         if (!isVertical && !isRight)
         {
-            if(manager.player[2].GetComponent<PaddleControllerHorizontal>().playerHP > 0)
+            if(manager.player[2].GetComponent<PaddleController>().playerHP > 0)
             {
-                manager.player[2].GetComponent<PaddleControllerHorizontal>().playerHP--;
+                manager.player[2].GetComponent<PaddleController>().playerHP--;
             }
             else
             {
@@ -51,9 +53,9 @@ public class ScoreManager : MonoBehaviour
         }
         if (!isVertical && isRight)
         {
-            if (manager.player[3].GetComponent<PaddleControllerHorizontal>().playerHP > 0)
+            if (manager.player[3].GetComponent<PaddleController>().playerHP > 0)
             {
-                manager.player[3].GetComponent<PaddleControllerHorizontal>().playerHP--;
+                manager.player[3].GetComponent<PaddleController>().playerHP--;
             }
             else
             {

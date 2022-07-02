@@ -19,9 +19,9 @@ public class ScoreUI : MonoBehaviour
 
     private void ScoreText()
     {
-        player1.text = manager.player[3].GetComponent<PaddleControllerHorizontal>().playerHP.ToString();
-        player2.text = manager.player[2].GetComponent<PaddleControllerHorizontal>().playerHP.ToString();
-        player3.text = manager.player[1].GetComponent<PaddleControllerVertical>().playerHP.ToString();
-        player4.text = manager.player[0].GetComponent<PaddleControllerVertical>().playerHP.ToString();
+        player1.text = manager.player[3].GetComponent<PaddleController>().playerHP.ToString();
+        player2.text = manager.player[2].GetComponent<PaddleController>().playerHP.ToString();
+        player3.text = manager.player[1].GetComponent<PaddleController>().playerHP.ToString();
+        player4.text = manager.player[0].GetComponent<PaddleController>().playerHP.ToString();
     }
 }

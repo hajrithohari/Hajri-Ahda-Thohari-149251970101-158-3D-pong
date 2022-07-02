@@ -13,19 +13,19 @@ public class GoalManager : MonoBehaviour
 
     public void PlayerInactive()
     {
-        if (player[0].GetComponent<PaddleControllerVertical>().playerHP == 0)
+        if (player[0].GetComponent<PaddleController>().playerHP == 0)
         {
             player[0].SetActive(false);
         }
-        if (player[1].GetComponent<PaddleControllerVertical>().playerHP == 0)
+        if (player[1].GetComponent<PaddleController>().playerHP == 0)
         {
             player[1].SetActive(false);
         }
-        if (player[2].GetComponent<PaddleControllerHorizontal>().playerHP == 0)
+        if (player[2].GetComponent<PaddleController>().playerHP == 0)
         {
             player[2].SetActive(false);
         }
-        if (player[3].GetComponent<PaddleControllerHorizontal>().playerHP == 0)
+        if (player[3].GetComponent<PaddleController>().playerHP == 0)
         {
             player[3].SetActive(false);
         }

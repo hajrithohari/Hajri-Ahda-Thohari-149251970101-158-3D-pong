@@ -315,9 +315,9 @@ MonoBehaviour:
     Blue. Numpad 1 - Numpad
     3
 
-    Green. Keypad A - Keypad D
+    Green. Keypad W - Keypad S
 
-    Yellow. Keypad J - Keypad L'
+    Yellow. Keypad I - Keypad K'
 --- !u!222 &481873653
 CanvasRenderer:
   m_ObjectHideFlags: 0
